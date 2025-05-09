@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>E-commerce Marketplace</title>
+    <link rel="stylesheet" href="market.css">
+    <script src="market.js" defer></script>
+</head>
+<body>
+
+
+    <button class="sidebar-toggle" aria-label="Toggle sidebar" onclick="toggleSidebar()">☰</button>
+
+   
+    <div class="sidebar" role="navigation">
+        <h2 class="logo">Core Transaction 1</h2>
+        <ul class="sidebar-menu">
+            <li><a href="market.html">Marketplace</a></li>
+            <li><a href="dashSP.html">Store and Products</a></li>
+            <li><a href="checkout.html">User Checkout</a></li>
+            <li><a href="detect.html">Auto Detect User Location</a></li>
+            <li><a href="order.html">Order Tracking</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <button class="login-btn" aria-label="Login">Login</button>
+            <button class="logout-btn" aria-label="Logout">Logout</button>
+        </div>
+    </div>
+
+    
+    <div class="main-content">
+
+      
+        <header>
+            <nav>
+                <div class="logo">URBANCARTEL</div>
+                <ul class="nav-links">
+                    <li><a href="market.html" class="active">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="dashSP.html">Sell</a></li>
+                    <li><a href="order.html">My Orders</a></li>
+                    <li><a href="account.html">Account</a></li>
+                    <li class="cart-icon">
+                        <a href="cart.html" aria-label="View Cart">Cart</a>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+       
+        <section class="search-section">
+            <div class="container">
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search for products..." id="searchInput" aria-label="Search for products">
+                        <button id="searchButton" aria-label="Search">Search</button>
+                    </div>
+                </div>
+                <div class="categories">
+                    <div class="category-tag">Electronics</div>
+                    <div class="category-tag">Fashion</div>
+                    <div class="category-tag">Home & Kitchen</div>
+                    <div class="category-tag">Books</div>
+                    <div class="category-tag">Beauty</div>
+                    <div class="category-tag">Sports</div>
+                    <div class="category-tag">Toys</div>
+                </div>
+            </div>
+        </section>
+
+     
+        <section class="hero">
+            <h2>SHOP NOW!!!</h2>
+            <p>Captures the essence of our e-commerce platform — a space where every online shopping experience is worth it, easy, and enjoyable.</p>
+        </section>
+
+        
+        <section class="container">
+            <h2>Featured Products</h2>
+            <div class="product-grid" id="productGrid">
+                
+            </div>
+        </section>
+
+       
+        <div class="overlay" id="productModal" role="dialog" aria-labelledby="productDetails">
+            <div class="modal">
+                <button class="close-modal" id="closeProductModal" aria-label="Close Product Modal">&times;</button>
+                <div id="productDetails">
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <section class="ratings">
+            <div class="rating-card">
+                <h4>Our Rating</h4>
+                <p>★★★★☆</p>
+                <small>Based on 22,218 reviews</small>
+            </div>
+
+            <div class="rating-card">
+                <h4>★★★★★</h4>
+                <p>Great value and quality</p>
+                <small>Lorem ipsum dolor sit amet...</small>
+                <p>– Angelo Delo Perez, 6 days ago</p>
+            </div>
+
+            <div class="rating-card">
+                <h4>★★★★☆</h4>
+                <p>Beautiful design!</p>
+                <small>Lorem ipsum dolor sit amet...</small>
+                <p>– Ishi Batumbakal, 6 days ago</p>
+            </div>
+
+            <div class="rating-card">
+                <h4>★★★★★</h4>
+                <p>Exactly what I wanted</p>
+                <small>Lorem ipsum dolor sit amet...</small>
+                <p>– Jerick Demagiba, 6 days ago</p>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="footer-columns">
+                <div>
+                    <h5>Need help?</h5>
+                    <a href="Contact Us.html" class="btn">Contact Us</a>
+                </div>
+                <div>
+                    <h5>Customer Support</h5>
+                    <p>Returns & Warranty</p>
+                    <p>Payments</p>
+                    <p>Shipping</p>
+                    <p>Terms of Service</p>
+                    <p>Privacy Policy</p>
+                </div>
+                <div>
+                    <h5>Corporate Info</h5>
+                    <p>About Us</p>
+                    <p>Brands</p>
+                    <p>Affiliates</p>
+                    <p>Investors</p>
+                    <p>Cookies</p>
+                </div>
+                <div>
+                    <h5>Gift Card</h5>
+                    <p>Buy Gift Cards</p>
+                    <p>Redeem Card</p>
+                </div>
+                <div>
+                    <h5>Location</h5>
+                    <p>Philippines ▼</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                        <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                        <a href="#"><img src="youtube.png" alt="YouTube"></a>
+                        <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                    </div>
+                </div>
+            
+        </footer>
+
+    </div> 
+
+</body>
+</html>

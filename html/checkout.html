@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Checkout | URBANCARTEL</title>
+  <link rel="stylesheet" href="checkout.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>URBANCARTEL</h1>
+  <nav>
+    <ul>
+      <li><a href="market.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-tshirt"></i> Shop</a></li>
+      <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="checkout-container">
+  <div class="checkout-header">
+    <h2><i class="fas fa-credit-card"></i> Secure Checkout</h2>
+    <span class="checkout-steps">
+      <span class="step active">Cart</span> &gt;
+      <span class="step active">Information</span> &gt;
+      <span class="step">Payment</span> &gt;
+      <span class="step">Confirmation</span>
+    </span>
+  </div>
+
+  <div class="info-section">
+    <div class="info-card">
+      <h3><i class="fas fa-user-circle"></i> Account Information</h3>
+      <p><strong>Email:</strong> 
+        <span id="user-email">ishibatumbakal@gmail.com</span>
+        <button onclick="editField('email')" class="edit-btn"><i class="fas fa-pen"></i></button>
+      </p>
+      <div id="edit-email" class="edit-box" style="display: none;">
+        <input type="email" id="email-input" />
+        <input type="hidden" name="user_address" id="user_address">
+        <button onclick="saveField('email')" class="save-btn">Save</button>
+        <button onclick="cancelEdit('email')" class="cancel-btn-small">Cancel</button>
+      </div>
+      <div id="edit-fulladdress" class="edit-box" style="display: none;">
+        <textarea id="fulladdress-input" rows="3" style="width:220px;"></textarea>
+        <button onclick="saveField('fulladdress')" class="save-btn">Save</button>
+        <button onclick="cancelEdit('fulladdress')" class="cancel-btn-small">Cancel</button>
+      </div>
+      <p><strong>Mobile:</strong> 
+        <span id="user-phone">+63*******09</span>
+        <button onclick="editField('phone')" class="edit-btn"><i class="fas fa-pen"></i></button>
+      </p>
+      <div id="edit-phone" class="edit-box" style="display: none;">
+        <input type="text" id="phone-input" />
+        <button onclick="saveField('phone')" class="save-btn">Save</button>
+        <button onclick="cancelEdit('phone')" class="cancel-btn-small">Cancel</button>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3><i class="fas fa-map-marker-alt"></i> Shipping Address</h3>
+      <p><strong>Address:</strong> 
+        <span id="user-address">Sa***** 160, Novaliches, QC</span>
+        <button onclick="editField('address')" class="edit-btn"><i class="fas fa-pen"></i></button>
+      </p>
+      <div id="edit-address" class="edit-box" style="display: none;">
+        <input type="text" id="address-input" />
+        <button onclick="saveField('address')" class="save-btn">Save</button>
+        <button onclick="cancelEdit('address')" class="cancel-btn-small">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="user-checkouts">
+    <h3><i class="fas fa-shopping-bag"></i> Order Details</h3>
+    <div class="shopee-user">
+      <h4>Delivery Information</h4>
+      <p><strong>Receiver:</strong> <span id="shopee-name">Angelo batumbakal</span></p>
+      <p><strong>Phone:</strong> <span id="shopee-phone">+63 912 345 6789</span></p>
+      <p><strong>Address:</strong> <span id="shopee-address">143 luzon avenue matandang balara q.c</span></p>
+      <button onclick="editShopeeInfo()" class="edit-info-btn"><i class="fas fa-pen"></i> Edit Info</button>
+      <div id="shopee-edit-box" class="edit-box" style="display:none;">
+        <input type="text" id="shopee-name-input" placeholder="Full Name" />
+        <input type="text" id="shopee-phone-input" placeholder="Phone Number" />
+        <input type="text" id="shopee-address-input" placeholder="Full Address" />
+        <button onclick="saveShopeeInfo()" class="save-btn">Save</button>
+        <button onclick="cancelShopeeEdit()" class="cancel-btn-small">Cancel</button>
+      </div>
+    </div>
+
+    <div class="product-section">
+      <h3><i class="fas fa-box"></i> Your Items</h3>
+      <div class="product">  
+        <img src="mikha.jpg" alt="CROCHET BINI MIKHA DRESS" class="product-image" />
+        <div class="product-info">
+          <p class="product-title">CROCHET BINI MIKHA DRESS</p>
+          <p class="product-variant">Color: Cream | Size: M</p>
+          <div class="quantity-control">
+            <button onclick="changeQty(-1)" class="qty-btn"><i class="fas fa-minus"></i></button>
+            <input type="number" id="quantity" value="1" min="1" readonly />
+            <button onclick="changeQty(1)" class="qty-btn"><i class="fas fa-plus"></i></button>
+          </div>
+          <p class="product-price"><del>₱5,000.00</del> <strong>₱2,000.00</strong></p>
+          <span class="discount-tag">25% OFF</span>
+        </div>
+        <button class="delete" onclick="deleteProduct()"><i class="fas fa-trash-alt"></i></button>
+      </div>
+
+      <div class="discount-section">
+        <h4><i class="fas fa-ticket-alt"></i> Use Voucher</h4>
+        <div class="voucher-input">
+          <input type="text" id="shopee-voucher" placeholder="Enter voucher code" />
+          <button onclick="applyShopeeVoucher()" class="apply-btn">Apply</button>
+        </div>
+        <p id="shopee-voucher-msg"></p>
+      </div>
+
+      <div class="cart-summary">
+        <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+        <div class="summary-row">
+          <span>Subtotal:</span>
+          <span>₱<span id="item-price">2,000</span></span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping:</span>
+          <span>₱<span id="shipping-cost">16</span></span>
+        </div>
+        <div class="summary-row discount">
+          <span>Savings:</span>
+          <span>-₱<span id="discount-amount">25</span></span>
+        </div>
+        <div class="summary-row discount">
+          <span>Discount Code:</span>
+          <span>-₱<span id="code-discount">24</span></span>
+        </div>
+        <hr />
+        <div class="summary-row total">
+          <span>Total:</span>
+          <span>₱<span id="total">2,016</span></span>
+        </div>
+      </div>
+
+      <div class="payment-methods">
+        <h4><i class="fas fa-money-bill"></i> Payment Method</h4>
+        <div class="payment-option">
+          <label><input type="radio" name="shopee-payment" value="Pick up delivery" checked />
+            <span class="payment-icon"><i class="fas fa-pick up delivery"></i></span>
+         Pick Up Delivery
+          </label>
+        <div class="payment-option">
+          <label><input type="radio" name="shopee-payment" value="COD" />
+            <span class="payment-icon"><i class="fas fa-money-bill-wave"></i></span>
+            Cash on Delivery
+          </label>
+        </div>
+      </div>
+
+      <div class="checkout-final">
+        <button class="checkout-btn" onclick="placeOrder()">
+          <li><a href="detect.html">PLACE OREDER SECURITY</a></li>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>URBANCARTEL</h4>
+      <p>Fashion for the urban lifestyle</p>
+    </div>
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-envelope"></i> support@urbancartel.com</p>
+      <p><i class="fas fa-phone"></i> +63 912 345 6789</p>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 URBANCARTEL. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="checkout.js"></script>
+</body>
+</html>

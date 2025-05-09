@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.html">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">E-Shop</div>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-user">
+            <div class="user-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="user-info">
+                <p class="user-name">Guest User</p>
+                <p class="user-status">Not logged in</p>
+            </div>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item active">
+                <a href="index.html">
+                    <i class="fas fa-store"></i>
+                    <span>Marketplace</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="seller.html">
+                    <i class="fas fa-box-open"></i>
+                    <span>Store & Products</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="checkout.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Checkout</span>
+                    <span class="cart-badge" id="sidebarCartCount">0</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="location.html">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Location Settings</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="tracking.html">
+                    <i class="fas fa-truck"></i>
+                    <span>Order Tracking</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="settings.html">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+            <a href="help.html">
+                <i class="fas fa-question-circle"></i>
+                <span>Help & Support</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header>
+            <nav>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for products..." id="searchInput">
+                    <button id="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="header-actions">
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="account.html" class="user-icon">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Page Content -->
+        <div class="container">
+            <!-- Category Filters -->
+            <div class="categories">
+                <div class="category-tag">All</div>
+                <div class="category-tag">Electronics</div>
+                <div class="category-tag">Fashion</div>
+                <div class="category-tag">Home & Kitchen</div>
+                <div class="category-tag">Books</div>
+                <div class="category-tag">Beauty</div>
+                <div class="category-tag">Sports</div>
+            </div>
+
+            <!-- Products Grid -->
+            <h2>Featured Products</h2>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div class="overlay" id="productModal">
+        <div class="modal">
+            <button class="close-modal" id="closeProductModal">&times;</button>
+            <div id="productDetails">
+                <!-- Product details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay (for mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

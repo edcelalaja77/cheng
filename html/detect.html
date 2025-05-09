@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>auto detect</title>
+  <link rel="stylesheet" href="detect.css" />
+</head>
+<body>
+  </div>
+  <div class="main-content">
+    <h1>Auto-Detect Location</h1>
+    <button id="checkoutBtn">Auto-Detect Location</button>
+    <div id="statusMsg" class="status"></div>
+
+    <div id="detectedSection" class="hidden">
+      <label for="addressInput">Detected Address:</label>
+      <input type="text" id="addressInput" placeholder="Detected address will appear here..." />
+      <button id="confirmBtn">Confirm Detected Address</button>
+    </div>
+    
+
+    <div id="manualSection">
+      <h2>Manual Address Entry</h2>
+      <label for="manualInput">Street Address:</label>
+      <input type="text" id="manualInput" placeholder="e.g., 123 Sampaguita St." />
+      
+      <label for="provinceSelect">Province:</label>
+      <select id="provinceSelect">
+        <option value="">Select Province</option>
+      </select>
+      
+      <label for="citySelect">City:</label>
+      <select id="citySelect">
+        <option value="">Select City</option>
+      </select>
+      
+      <label for="barangaySelect">Barangay:</label>
+      <select id="barangaySelect">
+        <option value="">Select Barangay</option>
+      </select>
+      
+    
+      <button id="manualSaveBtn">Save Manual Address</button>
+    </div>
+    
+    <div id="confirmationMessage" class="hidden">
+      <p>Your manual address has been saved!</p>
+    </div>    
+    <div id="confirmedSection" class="hidden">
+      <h2>✅ Confirmed Address</h2>
+      <p id="confirmedText"></p>
+      <input type="text" id="confirmedInput" />
+      <button li><a href="order.html">Update Address</a></li>    </button>  
+      <button id="resetBtn">Reset</button>
+    </div>
+    
+    <div id="shippingSection" class="hidden">
+      <p id="shippingCost"></p>
+    </div>
+  </div>
+
+  <script src="detect.js"></script>
+
+</body>
+</html>
